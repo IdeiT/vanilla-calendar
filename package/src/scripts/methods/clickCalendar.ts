@@ -34,12 +34,8 @@ const clickCalendar = (self: IVanillaCalendar) => {
 
 		const clickDaySingle = () => {
 			if (!self.selectedDates || !dayBtnEl || !dayBtnEl.dataset.calendarDay) return;
-			if (dayBtnEl.classList.contains(self.CSSClasses.dayBtnSelected)) {
-				self.selectedDates.splice(self.selectedDates.indexOf(dayBtnEl.dataset.calendarDay as FormatDateString), 1);
-			} else {
-				self.selectedDates = [];
-				self.selectedDates.push(dayBtnEl.dataset.calendarDay as FormatDateString);
-			}
+			self.selectedDates = [];
+			self.selectedDates.push(dayBtnEl.dataset.calendarDay as FormatDateString);
 		};
 
 		const clickDayMultiple = () => {
